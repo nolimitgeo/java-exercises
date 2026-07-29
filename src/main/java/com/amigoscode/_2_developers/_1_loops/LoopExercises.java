@@ -21,7 +21,12 @@ public class LoopExercises {
         // TODO: 1 - Use nested for loops to print an n x n multiplication table.
         //  Outer loop iterates rows 1..n, inner loop iterates columns 1..n.
         //  Print each product followed by a tab, and a newline after each row.
-
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print(i * j + "\t");
+            }
+            System.out.println();
+        }
     }
 
     /**
@@ -35,6 +40,17 @@ public class LoopExercises {
         int sum = 0;
         // TODO: 2 - Loop from 1 to n. Use 'continue' to skip multiples of 3.
         //  Use 'break' to stop if sum exceeds 100. Add the current number to sum otherwise.
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0) {
+                continue;
+            } else {
+                if (sum + i > 100) {
+                    break;
+                } else {
+                    sum += i;
+                }
+            }
+        }
 
         return sum;
     }
@@ -54,6 +70,18 @@ public class LoopExercises {
         //  When the target is found, set result to "Found at [row][col]" and
         //  use 'break search;' to exit both loops.
 
+        search:
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                if (matrix[row][col] == target) {
+                    result = "Found at " + "[" + row + "][" + col + "]";
+                    break search;
+                } else {
+                    continue;
+                }
+            }
+        }
+
         return result;
     }
 
@@ -68,6 +96,9 @@ public class LoopExercises {
         long accumulator = 1;
         // TODO: 4 - Use a for loop from 1 to n (inclusive), multiplying accumulator
         //  by the loop variable each iteration. Return the result.
+        for (int i = 1; i <= n; i++) {
+            accumulator *= i;
+        }
 
         return accumulator;
     }
