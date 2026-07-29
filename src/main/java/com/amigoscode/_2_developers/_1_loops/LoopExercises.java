@@ -117,6 +117,17 @@ public class LoopExercises {
         // TODO: 5 - Use nested loops to print a centered pyramid of stars.
         //  For each row i (0-based), print (rows - i - 1) spaces followed by (2 * i + 1) stars.
         //  Print a newline after each row.
+        for (int row = 0; row < rows; row++) {
+            for (int space = 0; space < rows - row - 1; space++) {
+                System.out.print(" ");
+            } 
+            
+            for (int star = 0; star < 2 * row + 1; star++) {    
+                    System.out.print('*'); 
+            }
+
+            System.out.println();
+        }
 
     }
 
@@ -131,6 +142,16 @@ public class LoopExercises {
         StringBuilder sb = new StringBuilder();
         // TODO: 6 - Use a for loop starting from the last index down to 0.
         //  Append each element to sb. Add ", " between elements but not after the last one.
+        int len = arr.length-1;
+        
+        for (int i = len; i >= 0; i--) {
+            sb.append(arr[i]);
+            if (i == 0) {
+                break;
+            } else {
+                sb.append(", ");
+            }
+        }
 
         return sb.toString();
     }
@@ -149,6 +170,13 @@ public class LoopExercises {
         // TODO: 7 - Use while(true) to create an infinite loop.
         //  Each iteration: increment attempts, generate a random int between 1 and 100,
         //  and break if it matches the target.
+        while (true) {
+            attempts++;
+            int randomNum = random.nextInt(100) + 1;
+            if (randomNum == target) {
+                break;
+            }
+        }
 
         return attempts;
     }
