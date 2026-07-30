@@ -63,7 +63,11 @@ public class IfStatements {
     public static int safeLength(String text) {
         // TODO: 4 - Check if text is null before calling text.length().
         //  Return -1 if text is null, otherwise return text.length().
-        return 0;
+        if (text == null) {
+            return -1;
+        } else {
+            return text.length();
+        }
     }
 
     /**
@@ -79,7 +83,14 @@ public class IfStatements {
         //  If both are null, return true.
         //  If only one is null, return false.
         //  Otherwise, use a.equals(b) — never use == for string content comparison.
-        return false;
+        if (a == null && b == null) {
+            return true;
+        } else if ((a != null && b == null) || (a == null && b != null)) {
+            return false;
+        } else {
+            return a.equals(b);
+        }
+        
     }
 
     /**
@@ -99,7 +110,16 @@ public class IfStatements {
         //      ...
         //      default -> "Invalid";
         //  };
-        return null;
+        return switch (day) {
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            case 6 -> "Saturday";
+            case 7 -> "Sunday";
+            default -> "Invalid";
+        };
     }
 
     public static void main(String[] args) {
