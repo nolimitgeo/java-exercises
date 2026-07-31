@@ -68,7 +68,7 @@ public class PackageDemo {
     public static double circleArea(double radius) {
         // TODO: 4 (continued) - Return PI * radius * radius using the statically imported PI.
         //  You need to add: import static java.lang.Math.PI; at the top of this file.
-        return 0;
+        return Math.PI * radius * radius;
     }
 
     /**
@@ -80,6 +80,8 @@ public class PackageDemo {
         //  in this project (e.g., com.amigoscode._2_developers._2_conditionals.IfStatements).
         //  Call one of its static methods and print the result.
         //  Example: String result = com.amigoscode._2_developers._2_conditionals.IfStatements.evenOrOdd(4);
+        String result = com.amigoscode._2_developers._2_conditionals.IfStatements.evenOrOdd(4);
+        System.out.println(result);
 
     }
 
