@@ -11,40 +11,58 @@ public class MethodOverloading {
 
     // TODO: 1 - Create a method: int add(int a, int b)
     //  Returns the sum of two integers.
-
+    public int add(int a, int b) {
+        return a + b;
+    }
 
     // TODO: 2 - Create an overloaded method: int add(int a, int b, int c)
     //  Returns the sum of three integers.
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
 
 
     // TODO: 3 - Create an overloaded method: double add(double a, double b)
     //  Returns the sum of two doubles.
-
+    public double add(double a, double b) {
+        return a + b;
+    }
 
     // TODO: 4 - Create a method: String format(String value)
     //  Returns the string wrapped in square brackets, e.g., "[hello]".
-
+    public String format(String value) {
+        return "[hello]";
+    }
 
     // TODO: 5 - Create an overloaded method: String format(int value)
     //  Returns the integer formatted with leading zeros to 5 digits.
     //  Example: format(42) returns "00042".
     //  Hint: use String.format("%05d", value)
+    public String format(int value) {
+        String format = String.format("%05d", value);
+        return format;
+
+    }
 
 
     // TODO: 6 - Create an overloaded method: String format(String label, int value)
     //  Returns "label: value", e.g., format("Score", 95) returns "Score: 95".
+    public String format(String label, int value) {
+        String format = String.format("%s: %d", label, value);
+        return format;
+    }
 
 
     public static void main(String[] args) {
         MethodOverloading mo = new MethodOverloading();
 
         // TODO: 7 - Call each overloaded method and print the results:
-        //  - add(2, 3)
-        //  - add(1, 2, 3)
-        //  - add(1.5, 2.5)
-        //  - format("hello")
-        //  - format(42)
-        //  - format("Score", 95)
+        System.out.println(mo.add(2, 3) + " is the first add method value");
+        System.out.println(mo.add(1, 2, 3) + " is the second add method value");
+        System.out.println(mo.add(1.5, 2.5) + " is the third add method value");
+        System.out.println(mo.format("hello") + " is the first format method value");
+        System.out.println(mo.format(42) + " is the second format method value");
+        System.out.println(mo.format("Score", 95) + " is the third format method value");
         //  Print each result with a descriptive label.
 
     }
